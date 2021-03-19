@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/alizarin.css">
+</head>
+
+<body>
+    <article class="single">
+        <header>
+            <h1>Click to add title</h1>
+        </header>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </article>
+    <article class="triple horizontal">
+        <header>
+            <h1>Click to add title</h1>
+        </header>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </article>
+    <article class="triple vertical">
+        <header>
+            <h1>Click to add title</h1>
+        </header>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </article>
+    <article class="quintuple">
+        <header>
+            <h1>Click to add title</h1>
+        </header>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <section>
+            <p>Click to add text</p>
+        </section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </article>
+    <script>
+        let darkTheme = false;
+        const button = document.createElement('button');
+        button.textContent = 'toggle!';
+        button.style = 'padding: 0.5rem 1rem; position: fixed; top: 2rem; left: 2rem;';
+        button.addEventListener('click', function () {
+            darkTheme = !darkTheme;
+            document.querySelector('link').href = 'css/' + ((darkTheme) ? 'midnight' : 'alizarin') + '.css';
+        });
+        document.body.appendChild(button);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+@import url('layout.css');
+
+:root {
+    --bg-color: #222;
+    --color: #000;
+    --color-primary: #fff;
+    --color-secondary: #e74c3c;
+    --color-subdued: #bdc3c7;
+    
+    --font-size-large: 32pt;
+    --font-size-medium: 26pt;
+    --font-size-small: 18pt;
+}

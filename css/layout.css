@@ -1,0 +1,139 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    color: var(--color);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-start;
+    counter-reset: slide;
+}
+
+article {
+    background-color: var(--color-primary);
+    min-width: 1068px;
+    min-height: 803px;
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem 1rem;
+    padding: 1rem 2rem;
+}
+
+article:last-of-type {
+    margin-bottom: 2rem;
+}
+
+article.single {
+    grid-template:
+        "header header header" 20%
+        "main main main" auto
+        "footerL footerM footerR" 3.5rem
+        / 2.5rem auto 25%;
+}
+
+article.triple.horizontal {
+    grid-template:
+        "header header header header" 20%
+        "side side mainU mainU" auto
+        "side side mainL mainL" auto
+        "footerL footerM footerM footerR" 3.5rem
+        / 2.5rem auto auto 25%;
+}
+
+article.triple.vertical {
+    grid-template:
+        "header header header header" 20%
+        "mainUL mainUL mainUR mainUR" auto
+        "mainL mainL mainL mainL" auto
+        "footerL footerM footerM footerR" 3.5rem
+        / 2.5rem auto auto 25%;
+}
+
+article.quintuple {
+    grid-template: 
+        "header header header header header header" 20%
+        "mainUL mainUL mainUM mainUM mainUR mainUR" auto
+        "mainLL mainLL mainLM mainLM mainLR mainLR" auto
+        "footerL footerM footerM footerM footerM footerR" 3.5rem
+        / 2.5rem auto auto auto auto 25%;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--color-secondary);
+    margin-left: -2rem;
+    padding: 1rem 0 1rem 2rem;
+}
+
+header > h1 {
+    color: var(--color-primary);
+    padding-top: 3rem;
+    border: 2px dashed var(--color-subdued);
+    font-size: var(--font-size-large);
+}
+
+/* single */
+article.single section { grid-area: main; }
+
+/* triple horizontal */
+article.triple.horizontal section:first-of-type { grid-area: side; }
+article.triple.horizontal section:nth-of-type(2) { grid-area: mainU; }
+article.triple.horizontal section:last-of-type { grid-area: mainL; }
+
+/* triple vertical */
+article.triple.vertical section:first-of-type { grid-area: mainUL; }
+article.triple.vertical section:nth-of-type(2) { grid-area: mainUR; }
+article.triple.vertical section:last-of-type { grid-area: mainL; }
+
+/* quintuple */
+article.quintuple section:first-of-type { grid-area: mainUL; }
+article.quintuple section:nth-of-type(2) { grid-area: mainUM; }
+article.quintuple section:nth-of-type(3) { grid-area: mainUR; }
+article.quintuple section:nth-of-type(4) { grid-area: mainLL; }
+article.quintuple section:nth-of-type(5) { grid-area: mainLM; }
+article.quintuple section:last-of-type { grid-area: mainLR; }
+
+section {
+    border: 2px dashed var(--color-subdued);
+    margin: 0 1rem;
+}
+
+section > p {
+    font-size: var(--font-size-medium);
+    font-weight: bold;
+}
+
+article > div:first-of-type {
+    grid-area: footerL;
+    background-color: var(--color-secondary);
+    margin-left: -1rem;
+    position: relative;
+}
+
+article > div:first-of-type::after {
+    counter-increment: slide;
+    content: counter(slide);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-small);
+    color: var(--color-primary);
+}
+
+article > div:nth-of-type(2) {
+    grid-area: footerM;
+    background-color: var(--color-subdued);
+}
+
+article > div:last-of-type {
+    grid-area: footerR;
+    background-color: var(--color-secondary);
+    margin-right: -2rem;
+}

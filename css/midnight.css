@@ -1,0 +1,17 @@
+@import url('layout.css');
+
+:root {
+    --bg-color: #222;
+    --color: var(--color-secondary);
+    --color-primary: #fff;
+    --color-secondary: #2c3e50;
+    --color-subdued: #bdc3c7;
+    
+    --font-size-large: 32pt;
+    --font-size-medium: 26pt;
+    --font-size-small: 18pt;
+}
+
+article > div:first-of-type {
+    background-color: #1abc9c !important;
+}
